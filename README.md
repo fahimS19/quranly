@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📖 Quranly
 
-## Getting Started
+A modern, fast and minimal Quran web application built with **Next.js**, designed for smooth reading, powerful search, and a clean user experience.
 
-First, run the development server:
+---
 
-```bash
+## ✨ Features
+
+- 📚 **Complete Surah List**
+  - All 114 Surahs with Arabic & English names
+  - Meccan / Medinan distinction
+  - Total ayah count
+
+- 📖 **Surah Reading Page**
+  - Arabic text + English translation
+  - Clean, distraction-free layout
+  - Smooth scrolling
+
+- 🔍 **Search Functionality**
+  - Search across the entire Quran (translation-based)
+  - Instant navigation to the exact ayah
+
+- ⚙️ **Settings Panel**
+  - Arabic font selection (Amiri / Reem Kufi)
+  - Adjustable Arabic font size
+  - Adjustable translation font size
+  - Persistent settings (localStorage)
+
+- 🎯 **Jump to Ayah**
+  - Quickly navigate to any ayah within a surah
+
+- 🌗 **Dark Mode Support**
+  - Fully responsive and theme-aware UI
+
+---
+
+## 🚀 Tech Stack
+
+- **Frontend & Backend**: Next.js (App Router)
+- **Rendering**: Static Site Generation (SSG)
+- **Styling**: Tailwind CSS
+- **Fonts**: Google Fonts (Amiri, Reem Kufi)
+- **Data Source**: Local Quran JSON dataset
+
+---
+
+## 📂 Project Structure
+app/
+├── surah/[id]/ # Individual surah pages
+├── search/ # Search results page
+├── components/ # Reusable UI components
+├── data/ # Quran dataset (JSON)
+└── page.tsx # Surah list page
+
+
+---
+
+## ⚡ Getting Started
+
+### 1. Clone the repository
+
+git clone https://github.com/your-username/quranly.git
+
+cd quranly
+
+
+### 2. Install dependencies
+
+npm install
+
+
+### 3. Run the development server
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 4. Open in browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+http://localhost:3000
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🧠 Key Design Decisions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **SSG for performance** → Surahs are pre-rendered for instant loading  
+- **Client-side search** → Fast and simple without external APIs  
+- **Local JSON dataset** → No dependency on external services  
+- **Minimal UI** → Focus on readability and usability  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 📌 Notes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Search is based on **English translation text**
+- Arabic fonts are dynamically switchable
+- All user preferences are saved in **localStorage**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📜 License
+
+This project is for educational and demonstration purposes.
