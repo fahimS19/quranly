@@ -25,7 +25,7 @@ export default function SettingsSidebar({
       {isOpen && (
         <div
           onClick={onClose}
-          className="fixed inset-0 bg-black/40 z-40 backdrop-blur-sm"
+          className="fixed inset-0 bg-black/20 z-40 transition-opacity"
         />
       )}
 
@@ -65,7 +65,7 @@ export default function SettingsSidebar({
               className="w-full mt-2 p-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-white"
             >
               <option value="amiri">📖 Amiri — Classical Mushaf</option>
-              <option value="reem">🧱 Reem Kufi — Modern Geometric</option>
+              <option value="reem">🧱 Reem Kufi — Modern </option>
             </select>
           </div>
 

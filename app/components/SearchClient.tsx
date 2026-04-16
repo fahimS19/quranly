@@ -20,7 +20,7 @@ export default function SearchClient() {
         return {
           surahId: surah.id,
           surahName: surah.surah_name,
-          ayah: i + 1, // ✅ IMPORTANT FIX
+          ayah: i + 1,
           text: v.translation_eng,
         };
       }),
@@ -34,7 +34,7 @@ export default function SearchClient() {
           Search Results
         </h1>
 
-        <p className="text-gray-500 mb-8">Query: "{query}"</p>
+        <p className="text-gray-500 mb-8">Searched keyword: {query}</p>
 
         {results.length === 0 ? (
           <p className="text-gray-500">No ayah found</p>

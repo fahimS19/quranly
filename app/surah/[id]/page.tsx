@@ -20,13 +20,11 @@ export default function SurahPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [jump, setJump] = useState("");
 
-  // load settings
   useEffect(() => {
     const saved = localStorage.getItem("settings");
     if (saved) setSettings(JSON.parse(saved));
   }, []);
 
-  // persist settings
   useEffect(() => {
     localStorage.setItem("settings", JSON.stringify(settings));
   }, [settings]);
@@ -47,7 +45,6 @@ export default function SurahPage() {
     }
   };
 
-  // scroll from search hash
   useEffect(() => {
     const hash = window.location.hash;
     if (!hash) return;
@@ -63,7 +60,6 @@ export default function SurahPage() {
   return (
     <main className="min-h-screen bg-white dark:bg-neutral-950 px-4 py-8">
       <div className="max-w-4xl mx-auto">
-        {/* Header */}
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-neutral-900 dark:text-white">
@@ -74,15 +70,13 @@ export default function SurahPage() {
             </p>
           </div>
 
-          {/* Controls */}
           <div className="flex items-center gap-2">
-            {/* Jump */}
             <input
               type="number"
-              placeholder={`1 - ${surah.total_verses}`}
+              placeholder={`jump to ayah(1 - ${surah.total_verses})`}
               value={jump}
               onChange={(e) => setJump(e.target.value)}
-              className="w-28 p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm"
+              className="w-47 p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 text-sm"
             />
 
             <button
@@ -92,7 +86,6 @@ export default function SurahPage() {
               Go
             </button>
 
-            {/* Settings */}
             <button
               onClick={() => setIsOpen(true)}
               className="px-4 py-2 rounded-lg border border-neutral-300 dark:border-neutral-700 text-sm"
@@ -102,15 +95,13 @@ export default function SurahPage() {
           </div>
         </div>
 
-        {/* Ayahs */}
         <div className="space-y-6">
-          {verses.map((v: any, i: number) => (
+          {verses.map((v, i) => (
             <div
               key={i}
               id={`ayah-${i + 1}`}
               className="p-5 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900"
             >
-              {/* Arabic */}
               <p
                 className={`text-right leading-loose mb-4 ${
                   settings.arabicFont === "amiri" ? "font-amiri" : "font-reem"
@@ -119,8 +110,6 @@ export default function SurahPage() {
               >
                 {v.content}
               </p>
-
-              {/* Translation */}
               <p
                 className="text-neutral-700 dark:text-neutral-300"
                 style={{ fontSize: settings.translationSize }}
@@ -134,7 +123,6 @@ export default function SurahPage() {
         </div>
       </div>
 
-      {/* Sidebar */}
       <SettingsSidebar
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
