@@ -6,20 +6,26 @@ import Link from "next/link";
 
 export default function SearchClient() {
   const params = useSearchParams();
-  const query = (params.get("q") || "").toLowerCase();
+  const query = (params.get("q") || "").toLowerCase().trim();
 
   const surahs = Object.values(data.chapters);
 
-  const results = surahs.flatMap((surah: any) =>
-    Object.values(surah.verses)
-      .filter((v: any) => v.translation_eng.toLowerCase().includes(query))
-      .map((v: any) => ({
-        surahId: surah.id,
-        surahName: surah.surah_name,
-        ayah: v.id,
-        text: v.translation_eng,
-      })),
-  );
+  const results = surahs
+    .flatMap((surah: any) =>
+      Object.values(surah.verses).map((v: any, i: number) => {
+        const text = v.translation_eng.toLowerCase();
+
+        if (!query || !text.includes(query)) return null;
+
+        return {
+          surahId: surah.id,
+          surahName: surah.surah_name,
+          ayah: i + 1, // ✅ IMPORTANT FIX
+          text: v.translation_eng,
+        };
+      }),
+    )
+    .filter(Boolean);
 
   return (
     <main className="min-h-screen bg-white dark:bg-neutral-950 px-4 py-10">
