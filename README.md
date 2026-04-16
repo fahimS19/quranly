@@ -44,22 +44,11 @@ A modern, fast and minimal Quran web application built with **Next.js**, designe
 
 ---
 
-## 📂 Project Structure
-app/
-├── surah/[id]/ # Individual surah pages
-├── search/ # Search results page
-├── components/ # Reusable UI components
-├── data/ # Quran dataset (JSON)
-└── page.tsx # Surah list page
-
-
----
-
 ## ⚡ Getting Started
 
 ### 1. Clone the repository
 
-git clone https://github.com/your-username/quranly.git
+git clone https://github.com/fahimS19/quranly.git
 
 cd quranly
 
