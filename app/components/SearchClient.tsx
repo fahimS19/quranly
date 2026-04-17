@@ -30,14 +30,40 @@ export default function SearchClient() {
   return (
     <main className="min-h-screen bg-white dark:bg-neutral-950 px-4 py-10">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-2xl font-bold mb-2 text-black dark:text-white">
+        <h1
+          className="text-3xl md:text-4xl font-extrabold mb-3
+        text-neutral-900 dark:text-white tracking-tight"
+        >
           Search Results
         </h1>
-
-        <p className="text-gray-500 mb-8">Searched keyword: {query}</p>
+        <p className="text-neutral-600 dark:text-neutral-400 mb-8">
+          Showing results for{" "}
+          <span className="font-semibold text-black dark:text-white px-2 py-1 rounded-md bg-neutral-100 dark:bg-neutral-800">
+            {query || "…"}
+          </span>
+        </p>
 
         {results.length === 0 ? (
-          <p className="text-gray-500">No ayah found</p>
+          <div className="text-center py-20">
+            <p className="text-2xl font-semibold text-neutral-800 dark:text-neutral-200 mb-3">
+              No results found
+            </p>
+            <p className="text-neutral-500 dark:text-neutral-400 mb-6">
+              We couldn’t find any ayah matching{" "}
+              <span className="font-medium text-black dark:text-white">
+                "{query}"
+              </span>
+            </p>
+
+            <Link
+              href="/surahs"
+              className="inline-block px-6 py-3 rounded-xl
+              bg-black text-white dark:bg-white dark:text-black
+              hover:opacity-90 transition"
+            >
+              Browse Surahs
+            </Link>
+          </div>
         ) : (
           <div className="space-y-4">
             {results.map((r: any, i: number) => (

@@ -18,8 +18,8 @@ export default function HomePage() {
           بِسْمِ ٱللَّٰهِ ٱلرَّحْمَـٰنِ ٱلرَّحِيمِ
         </p>
 
-        <p className="text-lg md:text-xl text-neutral-500 dark:text-neutral-400 mb-8">
-          A all in one minimalistic app for your Quran reading experience
+        <p className="text-lg md:text-2xl text-neutral-500 dark:text-neutral-400 mb-8">
+          An all in one minimalistic app for your Quran reading experience
         </p>
         <Link
           href="/surahs"
