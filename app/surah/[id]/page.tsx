@@ -35,7 +35,7 @@ export default function SurahPage() {
     const num = Number(jump);
 
     if (!num || num < 1 || num > surah.total_verses) {
-      alert(`Enter a number between 1 and ${surah.total_verses}`);
+      alert(`Enter a number between 1 to ${surah.total_verses}`);
       return;
     }
 
