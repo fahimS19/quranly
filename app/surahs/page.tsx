@@ -23,7 +23,7 @@ export default function SurahsPage() {
       <div className="max-w-5xl mx-auto">
         <div className="mb-10 text-center">
           <h1 className="text-4xl font-extrabold text-neutral-900 dark:text-white tracking-tight">
-            List of All Surahs
+            All Surahs
           </h1>
         </div>
         <div className="flex items-center gap-3 mb-12">
