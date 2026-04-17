@@ -21,7 +21,6 @@ export default function SettingsSidebar({
 }: Props) {
   return (
     <>
-      {/* Overlay */}
       {isOpen && (
         <div
           onClick={onClose}
@@ -29,13 +28,12 @@ export default function SettingsSidebar({
         />
       )}
 
-      {/* Sidebar */}
       <aside
-        className={`fixed top-0 right-0 h-full w-80 bg-white dark:bg-neutral-950 border-l border-neutral-200 dark:border-neutral-800 z-50 transform transition-transform duration-300
+        className={`fixed top-0 right-0 h-full w-80 bg-white dark:bg-neutral-950 border-l border-neutral-200
+          dark:border-neutral-800 z-50 transform transition-transform duration-300
         ${isOpen ? "translate-x-0" : "translate-x-full"}`}
       >
         <div className="p-6 space-y-8">
-          {/* Header */}
           <div className="flex justify-between items-center">
             <h2 className="text-lg font-bold text-neutral-900 dark:text-white">
               Settings
@@ -48,7 +46,6 @@ export default function SettingsSidebar({
             </button>
           </div>
 
-          {/* Arabic Font */}
           <div>
             <label className="text-sm font-medium text-neutral-500">
               Arabic Font
@@ -68,8 +65,6 @@ export default function SettingsSidebar({
               <option value="reem">🧱 Reem Kufi — Modern </option>
             </select>
           </div>
-
-          {/* Arabic Size */}
           <div>
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-neutral-500">
@@ -95,7 +90,6 @@ export default function SettingsSidebar({
             />
           </div>
 
-          {/* Translation Size */}
           <div>
             <div className="flex justify-between items-center">
               <label className="text-sm font-medium text-neutral-500">

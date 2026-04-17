@@ -4,6 +4,7 @@ import { useState } from "react";
 import data from "@/app/data/quran.json";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function SurahsPage() {
   const [query, setQuery] = useState("");
@@ -44,7 +45,6 @@ export default function SurahsPage() {
           </button>
         </div>
 
-        {/* GRID */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {surahs.map((s: any) => (
             <Link
@@ -67,10 +67,12 @@ export default function SurahsPage() {
                       <h2 className="text-xl font-bold text-neutral-900 dark:text-white flex items-center gap-2">
                         {s.surah_name}
 
-                        <img
+                        <Image
                           src={
                             s.type === "meccan" ? "/makkah.png" : "/madinah.png"
                           }
+                          width={20}
+                          height={20}
                           className="w-5 h-5"
                           alt=""
                         />
@@ -82,7 +84,6 @@ export default function SurahsPage() {
                     </div>
                   </div>
 
-                  {/* ARABIC (FIXED FONT) */}
                   <div className="text-right">
                     <p className="text-3xl text-neutral-900 dark:text-white font-amiri">
                       {s.surah_name_ar}
